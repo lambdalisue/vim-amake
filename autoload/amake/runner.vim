@@ -16,9 +16,7 @@ endfunction
 
 function! amake#runner#run(runner, filename) abort
   let args = a:runner.build_args(a:filename)
-  let output = amake#process#call(args)
-  return {
-        \ 'args': args,
-        \ 'output': output,
-        \}
+  let result = amake#process#open(args)
+  let result.args = args
+  return result
 endfunction
