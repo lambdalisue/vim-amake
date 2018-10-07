@@ -5,4 +5,4 @@ if exists('g:loaded_amake')
 endif
 let g:loaded_amake = 1
 
-command! Amake call amake#run()
+command! -nargs=? Amake call amake#run(<q-args>)
